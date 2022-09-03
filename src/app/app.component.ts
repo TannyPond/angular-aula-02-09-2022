@@ -12,7 +12,11 @@ export class AppComponent  {
   timer = setInterval(() =>{
     this.counter = this.counter + 1;
   },100);
+  numbers = this.getRandomNumbers();
 
+  restartCounter(){
+    this.counter = 0;
+  }
   getIdade(){
     return 2022 - this.nascimento;
   }
@@ -23,4 +27,16 @@ export class AppComponent  {
   getSegundos(){
     return Math.trunc(this.counter%60);
   }
+
+  refreshRandomNumbers(){
+    this.numbers = this.getRandomNumbers();
+  }
+
+  getRandomNumbers(){
+    let arr = [];
+    for(let i = 0; i < 10 ; i++){
+      arr[i] = Math.trunc(100 * Math.random());
+    }
+    return arr;
+}
 }

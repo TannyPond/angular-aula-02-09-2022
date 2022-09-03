@@ -15,9 +15,17 @@ IDADE <u>{{2022 - nascimento}} anos</u>
 <hr>
 <h2>Contador: {{counter}} seg</h2>
 <h3>{{getMinutos()}}'{{getSegundos()}}''</h3>
+<button (click)="restartCounter()">
+  REINICIAR
+</button>
 
 <hr>
-<div *ngFor="let n of [25, 3, 7, 13, 19, 35, 42 ]"> {{n}}: 
+
+<h3>NÚMEROS ALEATÓRIOS</h3>
+<button (click) = "refreshRandomNumbers()"> GERAR </button>
+
+<hr>
+<div *ngFor="let n of numbers"> {{n}}: 
   <span *ngIf="n % 2 == 0">NÚMERO PAR</span>
   <span *ngIf="n % 2 != 0">NÚMERO IMPAR</span>
 </div>
